@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+    <nav class="navigation-container">
+        <div class="logo">
+            <a href="#">Dumanlag Portfolio</a>
+        </div>
+        <ul class="nav-links">
+            <li class="active"><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">My Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div id="home" class="container fade-section">
+        <div class="sub-container">
+          
+            <div class="name-info">
+                <h3 style="font-weight: 500;">Hello,</h3>
+                <h1 style="color: #ED594D;" class="name">I'm Edel Jessa Dumanlag</h1>
+                <!-- h3 with a class to target for typing effect -->
+                <h3 id="typing-text" style="font-weight: 300;">A student in Bachelor of Science in Business Administration</h3>
+                <button class="about-me-btn" onclick="scrollToAbout()">About Me</button>
+            </div>
+            <!-- /*<div class="pic"> -->
+                <!-- <img src="assets/img/edel2.jpg" width="60%" class="img1" alt="Profile Picture"> -->
+            <!-- </div> -->
+        </div>
+    </div>
+    
+    
+    
+    <div id="about" class="container-2 fade-section">
+       
+        <div class="sub-container-2">
+           
+            <div class="pic-2">
+                <img src="assets/img/edel.jpg" width="100%" height="100%" alt="">
+            </div>
+            <div class="info-about-me">
+                <h1 style="margin-bottom: 1rem;">About Me</h1>
+                
+                <p>
+                    I’m a straightforward girl who finds joy in life’s simple pleasures. I believe in being authentic and connecting with others on a deeper level. I’m always eager to explore new experiences, whether that’s through learning something new, discovering a hidden spot in nature, or simply sharing a moment with friends. Whether it’s a peaceful walk through the woods, diving into the pages of a good book, or laughing with loved ones, I believe in cherishing each moment. Life’s beauty lies in these little moments of connection and joy, and I aim to make the most of them every day.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+
+    <div id="skills" class="container-3 fade-section">
+        <div class="sub-container-3">
+            <h1 style="margin-bottom: 1rem; text-align: center; font-weight: 500;">My Skills</h1>
+            <div class="box-1">
+                <div class="skill-box">
+                    <img src="assets/img/chat.png" width="11%" alt="" style="padding-top: 10px;">
+                    <h3 style="padding-top: 13px; padding-bottom: 5px;">Communication</h3>
+                    <p>The speaker emphasizes the importance of open and honest communication in building strong relationships, fostering trust, respect, and a positive atmosphere.</p>
+                </div>
+                <div class="skill-box">
+                    <img src="assets/img/bulb.png" width="11%" alt="" style="padding-top: 10px;">
+                    <h3 style="padding-top: 13px; padding-bottom: 5px;">Problem Solving</h3>
+                    <p>I find satisfaction in assessing problems, finding practical solutions, and aiming for long-term, preventative solutions to daily challenges, rather than immediate fixes.</p>
+                </div>
+                <div class="skill-box">
+                    <img src="assets/img/maintain.png" width="11%" alt="" style="padding-top: 10px;">
+                    <h3 style="padding-top: 13px; padding-bottom: 5px;">Organization</h3>
+                    <p>Maintaining organization in personal and professional life enhances productivity, reduces stress, and keeps tasks on track, thereby enhancing overall well-being.</p>
+                </div>
+                <div class="skill-box">
+                    <img src="assets/img/teamwork.png" width="11%" alt="" style="padding-top: 10px;">
+                    <h3 style="padding-top: 13px; padding-bottom: 5px;">Teamwork</h3>
+                    <p>Teamwork is valuable for learning from others, collaborating, and bringing out the best in each person. It's about understanding strengths and achieving more together than alone.</p>
+                </div>
+                <div class="skill-box">
+                    <img src="assets/img/adaptability.png" width="11%" alt="" style="padding-top: 10px;">
+                    <h3 style="padding-top: 13px; padding-bottom: 5px;">Adaptability</h3>
+                    <p>Adaptability is crucial in life, allowing for swift adaptation to changes, challenges, and unexpected events. Embracing change as an opportunity for growth and improvement is key.</p>
+                </div>
+                <div class="skill-box">
+                    <img src="assets/img/listening.png" width="11%" alt="" style="padding-top: 10px;">
+                    <h3 style="padding-top: 13px; padding-bottom: 5px;">Listening</h3>
+                    <p>Listening is a crucial skill that involves understanding others' perspectives, responding with empathy, and engaging in thoughtful conversations to build stronger connections and effectively address their needs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact" class="footer fade-section">
+        <div class="footer-content">
+            <h1 style="margin-bottom: 1rem;">Contact</h1>
+            <div class="socialmedias">
+                <img src="assets/img/facebook (1).png" width="2%" alt="">
+                <img src="assets/img/instagram.png" width="2%" alt="">
+                <img src="assets/img/whatsapp (1).png" width="2%" alt="">
+            </div>
+            <p>EdelDumanlag@facebook.com</p>
+            <p>edeldumanlag@instagram.com</p>
+            <p>edeldumanlag@whatsapp.com</p>
+            <p>Phone: 09059272560</p>
+        </div>
+    </div>
+
+    <script>
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, {
+            threshold: 0.5 // trigger when 50% of the section is visible
+        });
+
+        const sections = document.querySelectorAll('.fade-section');
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        const skillBoxes = document.querySelectorAll('.skill-box');
+        skillBoxes.forEach(skillBox => {
+            observer.observe(skillBox);
+        });
+
+        //navigation menu script
+        document.querySelector(".menu-toggle").addEventListener("click", function() {
+            this.classList.toggle("active");
+            document.querySelector(".nav-links").classList.toggle("active");
+        });
+
+        //smooth scrolling for the navigation menu
+        document.querySelectorAll('.nav-links a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetId === '#home') {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    const navHeight = document.querySelector('.navigation-container').offsetHeight;
+                    window.scrollTo({
+                        top: targetSection.offsetTop - navHeight,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+
+
+        const texts = [
+        "A student in Bachelor of Science in Business Administration",
+        "Passionate about technology and business",
+        "Always eager to learn new skills",
+        "Looking forward to my future career"
+    ];
+
+    let textIndex = 0;
+    const typingEffectElement = document.getElementById('typing-text');
+
+    function applyTypingEffect(newText) {
+        typingEffectElement.textContent = ''; 
+        let i = 0;
+        const typingInterval = setInterval(() => {
+            typingEffectElement.textContent += newText[i];
+            i++;
+            if (i === newText.length) {
+                clearInterval(typingInterval);
+            }
+        }, 100); 
+    }
+
+   
+    function changeText() {
+        const newText = texts[textIndex];
+        applyTypingEffect(newText);
+        textIndex = (textIndex + 1) % texts.length; 
+    }
+
+    applyTypingEffect(texts[0]);
+
+    setInterval(changeText, 6000);
+
+
+
+    function scrollToAbout() {
+    const aboutSection = document.getElementById('about');
+    const offset = -100; 
+    const topPosition = aboutSection.getBoundingClientRect().top + window.scrollY + offset;
+
+    window.scrollTo({
+        top: topPosition,
+        behavior: 'smooth'
+    });
+}
+
+    </script>
+
+</body>
+</html>
